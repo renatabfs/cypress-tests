@@ -19,8 +19,18 @@ function AccountsProvider({ children }: PropsWithChildren) {
         }
     }, []);
 
+    const create = useCallback(async (account: Account): Promise<boolean>=> {
+        try{
+            await service.create(account)
+            return true
+        } catch(e) {
+            console.error(e)
+            return false
+        }
+    }, [])
+
     return (
-        <AccountsCTX.Provider value={{ data, fetch }}>
+        <AccountsCTX.Provider value={{ data, fetch, create}}>
             {children}
         </AccountsCTX.Provider>
     )
