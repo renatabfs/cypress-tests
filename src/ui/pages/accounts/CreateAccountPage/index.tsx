@@ -1,6 +1,7 @@
 import React, { useCallback } from "react"
 import {useNavigate} from 'react-router-dom'
 import styles from '../ListAccountPage/styles.module.scss'
+import Account from '../../../../data/core/domain/models/Acount'
 
 function CreateAccountsPage () {
     const navigate = useNavigate();
@@ -18,7 +19,10 @@ function CreateAccountsPage () {
             alert('você precisa preencher todos os campos do formulário')
             return
         }
-        console.log(data)
+
+        const account = Account.fromForm(data)
+
+        console.log(account)
     },[])
 
     return (
