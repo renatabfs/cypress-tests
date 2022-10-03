@@ -7,7 +7,6 @@ class Account {
 
 
     constructor() {
-        this._id = 0;
         this._name = this._birthDate = this._cpf = this._email = '';
     }
 
@@ -20,6 +19,16 @@ class Account {
         obj._email = String(json["email"]);
         return obj;
     }
+
+    static fromForm (json: Record<string, unknown>): Account {
+        const obj = new Account();
+        obj._name = String(json["data"]);
+        obj._birthDate = String(json["birth_date"]);
+        obj._cpf = String(json["cpf"]);
+        obj._email = String(json["email"]);
+        return obj;
+    }
+
     toJSON() {
         const json: Record<string, unknown> = {};
         json['name'] = this.name;
