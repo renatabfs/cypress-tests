@@ -8,8 +8,9 @@ class AccountAPI extends IAccountsAPI{
             "/accounts");
 
         return response.data.map(Account.fromJSON);
-    
-        throw new Error("Method not implemented.");
+    } 
+    async create(account: Account): Promise<void> {
+       await BackEndClient.post('/accounts', account.toJSON())
     }
 }
 
