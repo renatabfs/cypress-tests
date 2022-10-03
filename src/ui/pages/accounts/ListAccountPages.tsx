@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react"
 import { AccountsCTX } from "../../contexts/accounts/AccountsCTX"
+import styles from './styles.module.scss'
 
 function ListAccountPages ( ) {
     const {data: accounts, fetch: fetchAccounts} = useContext(AccountsCTX)
@@ -12,7 +13,7 @@ function ListAccountPages ( ) {
     console.log(accounts)
     return (
         
-        <div>
+        <div className={styles.container}>
         <header>
         <h1>List account page</h1>
         <button>criar conta</button>
