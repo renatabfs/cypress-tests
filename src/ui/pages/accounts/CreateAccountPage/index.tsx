@@ -7,7 +7,18 @@ function CreateAccountsPage () {
     const submit = useCallback ((event: React.FormEvent) => {
         event.preventDefault()
 
-        console.log(event.currentTarget)
+        const inputs = event.currentTarget.getElementsByTagName('input')
+        const data: Record<string, string>= {}
+
+        for (const input of inputs) {
+            data[input.name] = input.value
+        }
+
+        if(Object.values(data).some(item => item === "")) {
+            alert('você precisa preencher todos os campos do formulário')
+            return
+        }
+        console.log(data)
     },[])
 
     return (
