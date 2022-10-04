@@ -46,7 +46,7 @@ function CreateAccountsPage () {
                     <label>Nome <input name="name"></input></label>
                     </div>
                     <div>
-                    <label>Data de nascimento <input  type='date'name="birth_date"></input></label>
+                    <label>Data de nascimento <input  type='date'name="birthDate"></input></label>
                     </div>
                     <div>
                     <label>Cpf <input type = "number" name="cpf"></input></label>
