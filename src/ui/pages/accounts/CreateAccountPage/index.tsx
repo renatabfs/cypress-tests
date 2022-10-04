@@ -1,11 +1,13 @@
-import React, { useCallback } from "react"
+import React, { useCallback, useContext } from "react"
 import {useNavigate} from 'react-router-dom'
 import styles from '../ListAccountPage/styles.module.scss'
 import Account from '../../../../data/core/domain/models/Acount'
+import { AccountsCTX } from "../../../contexts/accounts/AccountsCTX";
 
 function CreateAccountsPage () {
+    const {create} = useContext(AccountsCTX)
     const navigate = useNavigate();
-    const submit = useCallback ((event: React.FormEvent) => {
+    const submit = useCallback (async (event: React.FormEvent) => {
         event.preventDefault()
 
         const inputs = event.currentTarget.getElementsByTagName('input')
@@ -21,7 +23,13 @@ function CreateAccountsPage () {
         }
 
         const account = Account.fromForm(data)
-
+        const result = await create(account);
+        if (result){
+            alert('Conta cadastrada com sucesso')
+            navigate('/')
+        } else{
+            alert('houve algum erro no cadastramento da conta. Por favor tente novamente mais tarde')
+        }
         console.log(account)
     },[])
 
