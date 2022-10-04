@@ -13,8 +13,8 @@ class Account {
     static fromJSON(json: Record<string, unknown>): Account {
         const obj = new Account();
         obj._id = Number(json["id"]);
-        obj._name = String(json["data"]);
-        obj._birthDate = String(json["birth_date"]);
+        obj._name = String(json["name"]);
+        obj._birthDate = String(json["birthDate"]);
         obj._cpf = String(json["cpf"]);
         obj._email = String(json["email"]);
         return obj;
@@ -22,8 +22,8 @@ class Account {
 
     static fromForm (json: Record<string, unknown>): Account {
         const obj = new Account();
-        obj._name = String(json["data"]);
-        obj._birthDate = String(json["birth_date"]);
+        obj._name = String(json["name"]);
+        obj._birthDate = String(json["birthDate"]);
         obj._cpf = String(json["cpf"]);
         obj._email = String(json["email"]);
         return obj;
@@ -32,7 +32,7 @@ class Account {
     toJSON() {
         const json: Record<string, unknown> = {};
         json['name'] = this.name;
-        json['birth_date'] = this.birthDate;
+        json['birthDate'] = this.birthDate;
         json['cpf'] = this.cpf;
         json['email'] = this.email;
         return json;

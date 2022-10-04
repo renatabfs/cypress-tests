@@ -36,8 +36,8 @@ function ListAccountPages ( ) {
                         <td>{account.id}</td>
                         <td>{account.name}</td>
                         <td>{account.birthDate}</td>
-                        <td>{account.cpf}</td>
                         <td>{account.email}</td>
+                        <td>{account.cpf}</td>
                     </tr>
                 ))}
             </tbody>
