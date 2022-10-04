@@ -29,7 +29,7 @@ function CreateAccountsPage () {
         <div className={styles.container}>
             <header>
             <h1>Cadastrar nova conta</h1>
-            <button onClick={() => navigate('/accounts')}>Ver contas cadastradas</button>
+            <button onClick={() => navigate('/')}>Ver contas cadastradas</button>
             </header>
             <form onSubmit={submit}>
                 <fieldset>
