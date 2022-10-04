@@ -10,6 +10,7 @@ function App() {
     <AccountsProvider>
     <BrowserRouter>
     <Routes>
+    <Route path="/" element={ <ListAccountPages />}/>
     <Route path="/accounts" element={ <ListAccountPages />}/>
     <Route path="/criar-conta" element= {<CreateAccountsPage />} />
     </Routes>
