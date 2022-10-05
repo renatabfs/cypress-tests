@@ -26,4 +26,16 @@ describe("Create Accounts Page", () => {
         cy.get('form fieldset button').click()
         cy.url().should('eq', 'http://localhost:4173/')
     })
+
+    it('should create an account when filling the form correctly', () => {
+        cy.intercept('POST', 'http://localhost:3000/accounts', {
+
+        })
+        cy.visit('http://localhost:4173/criar-conta')
+        cy.get('form fieldset input[name="name"]').type(accounData['name'])
+        cy.get('form fieldset input[name="birthDate"]').type(accounData['birthDate'])
+        cy.get('form fieldset input[name="cpf"]').type(accounData['cpf'])
+
+        cy.get('form fieldset button').click()
+    })
 });
