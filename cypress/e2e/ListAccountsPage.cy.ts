@@ -22,4 +22,12 @@ describe("List Accounts Page", () => {
         cy.get('table tbody tr').should('have.length', 2)
         cy.get('table tbody tr:first-child td').should('have.length', 5)
     })
+
+    it('should\'t list accounts when fetch fals', () => {
+        cy.intercept('GET', 'http://localhost:3000/accounts', {
+           statusCode: 400,  
+        });
+        cy.visit('http://localhost:4173/')
+        cy.get ('table tbody tr').should('have.length', 0)
+    })
 })
