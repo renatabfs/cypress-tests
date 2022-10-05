@@ -30,4 +30,9 @@ describe("List Accounts Page", () => {
         cy.visit('http://localhost:4173/')
         cy.get ('table tbody tr').should('have.length', 0)
     })
+    it('should redirect to create accunts page when  click on header button', () => {
+        cy.visit('http://localhost:4173/')
+        cy.get('header button').click();
+        cy.url().should('include', 'http://localhost:4173/criar-conta')
+    })
 })
