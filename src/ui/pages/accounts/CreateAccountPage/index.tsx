@@ -37,28 +37,28 @@ function CreateAccountsPage () {
         <div className={styles.container}>
             <header>
             <h1>Cadastrar nova conta</h1>
-            <button onClick={() => navigate('/')}>Ver contas cadastradas</button>
             </header>
             <form onSubmit={submit}>
                 <fieldset>
                     <legend>Dados gerais</legend>
                     <div>
-                    <label>Nome <input name="name"></input></label>
+                    <label>Nome: <input name="name"></input></label>
                     </div>
                     <div>
-                    <label>Data de nascimento <input  type='date'name="birthDate"></input></label>
+                    <label>Data de nascimento: <input  type='date'name="birthDate"></input></label>
                     </div>
                     <div>
-                    <label>Cpf <input type = "number" name="cpf"></input></label>
+                    <label>Cpf: <input type = "number" name="cpf"></input></label>
                     </div>
                     <div>
-                    <label>Email <input type= 'email' name="email"></input></label>
+                    <label>Email: <input type= 'email' name="email"></input></label>
                     </div>
                     <button type="submit">
                         Finalizar
                     </button>
                 </fieldset>
             </form>
+            <button onClick={() => navigate('/')}>Ver contas cadastradas</button>
         </div>
     )
 }

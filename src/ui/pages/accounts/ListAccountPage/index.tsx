@@ -17,16 +17,15 @@ function ListAccountPages ( ) {
         
         <div className={styles.container}>
         <header>
-        <h1>Lista de contas</h1>
-        <button onClick={() => navigate('/criar-conta')}>criar conta</button>
+        <h1>Lista de contas - GQSO</h1>
         </header>
-        <table border = {1}>
+        <table>
             <thead>
                 <tr>
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Data de nascimento</th>
-                <th>e-mail</th>
+                <th>E-mail</th>
                 <th>CPF</th>
                     </tr>
             </thead>
@@ -42,6 +41,7 @@ function ListAccountPages ( ) {
                 ))}
             </tbody>
         </table>
+        <button onClick={() => navigate('/criar-conta')}>criar conta</button>
     </div>
 )}
 
