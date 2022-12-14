@@ -6,7 +6,7 @@ describe("List Accounts Page", () => {
     });
 
     it('should have title, create account button and table', () => {
-        cy.visit('http://localhost:3000/')
+        cy.visit('http://localhost:5173/criar-conta')
         cy.get('header h1').should('have.text', 'Lista de contas - GQSO')
         cy.get('button').should('have.text', 'criar conta')
         cy.get('table').should('exist')
@@ -14,7 +14,7 @@ describe("List Accounts Page", () => {
         cy.get('table thead tr th:nth-child(1)').should('have.text', 'ID')
         cy.get('table thead tr th:nth-child(2)').should('have.text', 'Nome')
         cy.get('table thead tr th:nth-child(3)').should('have.text', 'Data de nascimento')
-        cy.get('table thead tr th:nth-child(4)').should('have.text', 'e-mail')
+        cy.get('table thead tr th:nth-child(4)').should('have.text', 'E-mail')
         cy.get('table thead tr th:nth-child(5)').should('have.text', 'CPF')
     })
 
@@ -27,7 +27,7 @@ describe("List Accounts Page", () => {
     })
     it('should redirect to create accunts page when  click on header button', () => {
         cy.visit('http://localhost:5173/')
-        cy.get('header button').click();
+        cy.get('#criarConta').click();
         cy.url().should('include', 'http://localhost:5173/criar-conta')
     })
 })
