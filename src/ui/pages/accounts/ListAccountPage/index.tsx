@@ -41,7 +41,7 @@ function ListAccountPages ( ) {
                 ))}
             </tbody>
         </table>
-        <button onClick={() => navigate('/criar-conta')}>criar conta</button>
+        <button id = "criarConta" onClick={() => navigate('/criar-conta')}>criar conta</button>
     </div>
 )}
 
